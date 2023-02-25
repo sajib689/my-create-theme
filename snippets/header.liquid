@@ -1,13 +1,32 @@
-<header>
+{{ 'style.css' | asset_url | stylesheet_tag }}
+<section class="intro page-width">
+  <div class="contact-number">
+    <i class="fa-solid fa-headphones-simple"></i>
+    <a href="tel: +8809617223344">
+      +8809617223344</a>
+  </div>
+  <div class="intro-text">
+    <h5>GRAB APEX GIFT VOUCHERS AT 10% OFF</h5>
+  </div>
+  <div></div>
+</section>
+<header class="page-width">
   <div class="logo">
-    <img src="../assets/images/logo.png" alt="logo">
+    <a href="/">{{ 'apex.png' | asset_url | img_tag: shop.name }}</a>
   </div>
-  <div class="navbar">
-    <ul>
-      <li><a href="">Home</a></li>
-      <li><a href="">Blog</a></li>
-      <li><a href="">About</a></li>
-    </ul>
+  <form action="{{ routes.search_url }}" class="search-box">
+    <input
+      type="text"
+      name="search"
+      placeholder="Search"
+      value="{{ search.terms | escape }}">
+    <a href="" class="search-icon">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+  </form>
+  <div class="cart-icon">
+    <a href="{{routes.cart_url}}">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </a>
   </div>
-  <div class="cart-icon"></div>
 </header>
