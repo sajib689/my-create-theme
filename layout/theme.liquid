@@ -1,0 +1,13 @@
+<html>
+  <head>
+    {{ content_for_header }}
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+    {{ 'script.js' | asset_url | script_tag }}
+  </head>
+
+  <body>
+    {% redner 'header' %}
+    {{ content_for_layout }}
+
+  </body>
+</html>
